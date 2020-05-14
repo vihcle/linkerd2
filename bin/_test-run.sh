@@ -149,7 +149,8 @@ remove_l5d_if_exists() {
 }
 
 cleanup() {
-    "$bindir"/test-cleanup $k8s_context > /dev/null 2>&1
+    "$linkerd_path" uninstall | kubectl delete -f -
+    # "$bindir"/test-cleanup $k8s_context > /dev/null 2>&1
     exit_on_err 'error removing existing Linkerd resources'
 }
 
