@@ -22,15 +22,15 @@ import (
 
 // TestHelper provides helpers for running the linkerd integration tests.
 type TestHelper struct {
-	linkerd               string
-	version               string
-	namespace             string
-	upgradeFromVersion    string
-	clusterDomain         string
-	externalIssuer        bool
-	multicluster          bool
-	uninstall             bool
-	httpClient            http.Client
+	linkerd            string
+	version            string
+	namespace          string
+	upgradeFromVersion string
+	clusterDomain      string
+	externalIssuer     bool
+	multicluster       bool
+	uninstall          bool
+	httpClient         http.Client
 	KubernetesHelper
 	helm
 }
@@ -119,10 +119,10 @@ func NewTestHelper() *TestHelper {
 	}
 
 	testHelper := &TestHelper{
-		linkerd:               *linkerd,
-		namespace:             *namespace,
-		upgradeFromVersion:    *upgradeFromVersion,
-		multicluster:          *multicluster,
+		linkerd:            *linkerd,
+		namespace:          *namespace,
+		upgradeFromVersion: *upgradeFromVersion,
+		multicluster:       *multicluster,
 		helm: helm{
 			path:               *helmPath,
 			chart:              *helmChart,
